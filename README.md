@@ -13,4 +13,4 @@ This project uses Render to host a full-stack application with:
 - **Backend**: Spring Boot (Java 21)
 - **Deployment**: Docker container with Nginx + Java
 
-**Note**: Free tier on Render spins down after 15 minutes of inactivity. First request may take 30-50 seconds to wake up the service. Also I am not if it is a correct way to host application but I did my best :)
+**Note**: Free tier on Render spins down after 15 minutes of inactivity. First request may take 30-50 seconds to wake up the service. Also I am not sure if it is a correct way to host application but I did my best :)
