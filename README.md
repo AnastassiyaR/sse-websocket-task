@@ -4,7 +4,7 @@ First experience deploying a full-stack application using Render cloud platform
 
 ## Live Demo  
 
-https://sse-websocket-app.onrender.com
+https://sse-websocket-task.onrender.com/
 
 ## Project Architecture
 
