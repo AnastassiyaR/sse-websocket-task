@@ -13,9 +13,10 @@ import java.util.concurrent.CopyOnWriteArrayList;
 @Service
 public class SseService {
 
-    private final List<SseEmitter> emitters = new CopyOnWriteArrayList<>();
+    private final List<SseEmitter> emitters = new CopyOnWriteArrayList<>();  // active users
 
     public SseEmitter createEmitter() {
+        // Timeout - MAX VALUE
         SseEmitter emitter = new SseEmitter(Long.MAX_VALUE);
         emitters.add(emitter);
 
@@ -31,6 +32,7 @@ public class SseService {
             log.info("Emitter timeout. Total: {}", emitters.size());
         });
 
+        // Spring/Tomcat calls this automatically when the connection is broken
         emitter.onError(error -> {
             emitters.remove(emitter);
             log.error("Emitter error: {}", error.getMessage());
@@ -51,7 +53,6 @@ public class SseService {
                 );
             } catch (IOException e) {
                 log.warn("Emitter is dead. Removing it...");
-                emitter.complete();
                 emitters.remove(emitter);
             }
         }
@@ -59,7 +60,7 @@ public class SseService {
 
     public void sendTimeUpdate() {
         String time = LocalTime.now().toString();
-        sendEvent("time-update", time);
+        sendEvent("time-update", "Server time: " + time);
     }
 
     public int getActiveEmittersCount() {

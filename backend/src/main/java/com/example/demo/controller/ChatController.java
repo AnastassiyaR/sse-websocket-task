@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+
 import com.example.demo.dto.ChatMessageDTO;
 import com.example.demo.mapper.ChatMessageMapper;
 import com.example.demo.model.ChatMessage;
@@ -17,7 +18,6 @@ public class ChatController {
 
     private final ChatService chatService;
     private final ChatMessageMapper mapper;
-
 
     @MessageMapping("/chat.send")
     @SendTo("/topic/messages")

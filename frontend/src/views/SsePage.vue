@@ -171,7 +171,6 @@ onUnmounted(() => {
 .news-item { display: flex; gap: 20px; margin-bottom: 10px; padding: 15px; border-radius: 8px; border-left: 4px solid #2196f3; background-color: white; animation: slideIn 0.3s ease; }
 @keyframes slideIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 .news-time { font-size: 13px; color: #666; font-weight: 400; min-width: 80px; }
-.news-content { flex: 1; }
 .news-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.7rem; font-weight: 600; margin-bottom: 0.5rem; background: #e3f2fd; color: #1976d2; }
 .news-text { color: #333; line-height: 1.4; margin: 0; }
 .update-indicator { margin-top: 20px; padding: 15px 20px; background: #e8f5e8; border-radius: 8px; color: #2e7d32; font-size: 15px; text-align: center; animation: pulse 2s infinite; }

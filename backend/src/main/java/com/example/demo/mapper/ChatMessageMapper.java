@@ -1,5 +1,6 @@
 package com.example.demo.mapper;
 
+
 import com.example.demo.dto.ChatMessageDTO;
 import com.example.demo.model.ChatMessage;
 import org.mapstruct.Mapper;

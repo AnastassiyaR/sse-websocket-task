@@ -1,5 +1,6 @@
 package com.example.demo.config;
 
+
 import com.example.demo.service.SseService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +19,7 @@ public class SseScheduler {
 
     @Scheduled(fixedRate = 5000)
     public void sendPeriodicUpdates() {
-        log.info("Sending periodic time update to {} clients",
+        log.info("Sending periodic time update to {} SSE clients",
                 sseService.getActiveEmittersCount());
 
         sseService.sendTimeUpdate();

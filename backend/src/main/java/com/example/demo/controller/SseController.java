@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+
 import com.example.demo.service.SseService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.MediaType;
@@ -13,6 +14,7 @@ public class SseController {
 
     private final SseService sseService;
 
+    // Content-Type: text/event-stream
     @GetMapping(path = "/api/sse", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public SseEmitter stream() {
         return sseService.createEmitter();

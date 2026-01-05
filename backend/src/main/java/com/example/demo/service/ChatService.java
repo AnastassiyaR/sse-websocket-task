@@ -1,17 +1,19 @@
 package com.example.demo.service;
 
+
 import com.example.demo.model.ChatMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 @Slf4j
 @Service
 public class ChatService {
 
-    private final List<ChatMessage> messageHistory = new ArrayList<>();
+    private final List<ChatMessage> messageHistory = new CopyOnWriteArrayList<>();
 
     public void addMessage(ChatMessage message) {
         messageHistory.add(message);
